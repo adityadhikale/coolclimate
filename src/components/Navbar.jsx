@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom"; 
+import { Link } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
 import Modal from "./Modal";
 import logo from "../assets/logo.webp";
@@ -14,10 +14,13 @@ const Navbar = () => {
       <nav className="bg-white shadow-md fixed w-full z-50">
         <div className="container mx-auto px-4 py-3 flex justify-between items-center">
           {/* Logo and Brand Name */}
-          <div className="flex items-center space-x-2">
-            <img src={logo} alt="Logo" className="h-10 w-10" />
-            <span className="text-xl font-bold text-gray-800">CoolClimate</span>
-          </div>
+          <Link to="/" >
+            <div className="flex items-center space-x-2">
+              <img src={logo} alt="Logo" className="h-10 w-10" />
+              <span className="text-xl font-bold text-gray-800">CoolClimate</span>
+            </div>
+          </Link>
+
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-6">
@@ -44,9 +47,8 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu */}
-        <div className={`md:hidden bg-white shadow-md flex flex-col items-center space-y-3 py-4 transition-all duration-300 ease-in-out ${
-          isOpen ? "opacity-100 max-h-screen" : "opacity-0 max-h-0 overflow-hidden"
-        }`}>
+        <div className={`md:hidden bg-white shadow-md flex flex-col items-center space-y-3 py-4 transition-all duration-300 ease-in-out ${isOpen ? "opacity-100 max-h-screen" : "opacity-0 max-h-0 overflow-hidden"
+          }`}>
           <Link to="/" className="text-gray-600 hover:text-blue-500">Home</Link>
           <Link to="/contact-us" className="text-gray-600 hover:text-blue-500">Contact Us</Link>
           <Link to="/about-us" className="text-gray-600 hover:text-blue-500">About Us</Link>
